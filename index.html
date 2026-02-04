@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head><title>The Java CLicks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+<style>
+
+        body{
+            background: linear-gradient(#ffd2d5, #ff939f);
+            height: 100%;
+        }
+        div{
+            border: red 0px solid;
+        }
+        .main{
+            width:97vw;
+            height: 1300px;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .container{
+            z-index: 1;
+            position: static;
+            margin-top: 50px;
+            height: 800px;
+            display: grid;
+            grid-template-columns: repeat(5, 180px);
+            grid-template-rows: repeat(1, 450px);
+            gap: 10px;
+        }
+
+        .item{
+            border-radius: 30px;
+            overflow: hidden;
+            transition: transform ease-in-out 0.5s;
+        }
+
+        .item:nth-child(odd){
+            background: linear-gradient( #dd4c6b,#cc303f);
+            border: 3px solid #8a5059;
+        }
+
+        .item:nth-child(even){
+            background: linear-gradient(#58b4a9,#5898b4);
+            border: 3px solid #8a5059;
+        }
+
+        .item:nth-child(odd):hover{
+            border: 5px solid #58b4a9;
+        }
+
+        .item:nth-child(even):hover{
+            border: 5px solid #dd4c6b;
+        }
+
+        .item:hover{
+            transform: translate(0,-50px) scale(1.05);
+        }
+
+        .item img{
+            translate: -12%;
+            width: 150%;
+            height: 100%;
+        }
+
+        .item-1, .item-5{
+            translate: 0 150px;
+        }
+
+        .item-2, .item-4{
+            translate: 0 70px;
+        }
+
+        .active{
+            translate: 10% -600px;
+            z-index: 2;
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            pointer-events: none;
+        }
+
+        .active img{
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text{
+            margin: auto;
+            font-family: "Style Script", cursive;
+            font-weight: 600;
+            width: 850px;
+            height: 150px;
+            color:#fdf6f0;
+            font-size: 120px;
+            text-align: center;
+            
+            text-shadow:
+                5px 5px 2px rgba(220, 107, 115)
+    
+        }
+
+        .mini-text{
+            width: 850px;
+            translate: 0% 200px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 40px;
+            color:#fdf6f0;
+             text-shadow:
+                2px 2px 2px rgb(54, 133, 175),
+                -1px -1px rgb(54, 133, 175)
+        }
+
+        @media(min-width: 1440px){
+            .container, .active, .mini-text{
+                margin-left: 17%;
+            }
+        }
+    </style></head>
+
+    <body>
+    <div class="main">
+         <div class="text">"Forever Digitalized"</div>
+        
+        <div class="container">
+        <div class="item item-1" onclick="change1()"><img src="menu-1.png"></div>
+        <div class="item item-2" onclick="change2()"><img src="menu-2.png"></div>
+        <div class="item item-3" onclick="change3()"><img src="menu-3.png"></div>
+        <div class="item item-4" onclick="change4()"><img src="menu-4.png"></div>
+        <div class="item item-5"onclick="change5()"><img src="menu-5.png"></div>
+        </div>
+        <div class="active"><img src="1.png" id="active"></div>
+        <div class="mini-text">THE JAVA CLICKS | @Techwork | 02.03.26</div>
+    </div>
+    </body>
+    <script>
+        const active = document.getElementById("active")
+        function change1(){
+           active.src = "1.png"
+        }
+
+        function change2(){
+            active.src = "2.png"
+        }
+
+        function change3(){
+            active.src = "3.png"
+        }
+
+        function change4(){
+            active.src = "4.png"
+        }
+
+        function change5(){
+            active.src = "5.png"
+        }
+    </script>
+</html>
